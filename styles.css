@@ -1,0 +1,68 @@
+body {
+    line-height: 1.5em;
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ol {
+    padding: 0 0 0 2em;
+}
+
+div, p {
+    font-weight: bold;
+}
+
+@media screen and (min-width: 960px) {
+    body {
+        width: 960px;
+        margin: 1em auto 1em auto;
+    }
+
+    .treeline, .treeline ul, .treeline li {
+        margin: 0; padding: 0; line-height: 1.5em; list-style: none;
+    }
+    .treeline ul {margin: 0 0 0 1em; /* отступ вертикальной линии */}
+    .treeline > li:not(:only-child), .treeline li li {
+        position: relative;
+        padding: 1em 0 0 1.5em; /* отступ текста */
+    }
+    /* Стиль вертикальной линии */
+    .treeline li:not(:last-child) { border-left: 1px solid #535353;}
+    /* Стили горизонтальной линии*/  
+    .treeline li li:before, .treeline > li:not(:only-child):before {
+        content: ""; position: absolute; top: 0; left: 0;
+        width: 1.1em; height: 1.7em; border-bottom:1px solid #535353;
+    }
+    /* Вертикальная линия последнего пункта в списка */  
+    .treeline li:last-child:before {
+        width: calc(1.1em - 1px); border-left: 1px solid #535353;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    body {
+        font-size: smaller;
+        margin: 1em 0.5em 1em 0.5em;
+    }
+
+    .treeline, .treeline ul, .treeline li {
+        margin: 0; padding: 0; line-height: 1.5em; list-style: none;
+    }
+    .treeline ul {margin: 0 0 0 0.3em; /* отступ вертикальной линии */}
+    .treeline > li:not(:only-child), .treeline li li {
+        position: relative;
+        padding: 1em 0 0 0.8em; /* отступ текста */
+    }
+    /* Стиль вертикальной линии */
+    .treeline li:not(:last-child) { border-left: 1px solid #535353;}
+    /* Стили горизонтальной линии*/  
+    .treeline li li:before, .treeline > li:not(:only-child):before {
+        content: ""; position: absolute; top: 0; left: 0;
+        width: 0.5em; height: 1.7em; border-bottom:1px solid #535353;
+    }
+    /* Вертикальная линия последнего пункта в списка */  
+    .treeline li:last-child:before {
+        width: calc(0.5em - 1px); border-left: 1px solid #535353;
+    }
+}
